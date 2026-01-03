@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS PROPERTY CO. | Luxury Real Estate Advisory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html.lenis, html.lenis body {
+          height: auto;
+        }
+
+        .lenis.lenis-smooth {
+          scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+          overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+          overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+          pointer-events: none;
+        }
+
+        .impact-heading {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+
+        /* Ensure fixed header doesn't cover section starts */
+        [id] {
+            scroll-margin-top: 5rem;
+        }
+
+        ::selection {
+            background-color: #2BC0E4;
+            color: white;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-neutral-800">
+    <div id="root"></div>
+    <script>
+      // Initialize Lenis
+      const lenis = new Lenis();
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+</body>
+</html>
